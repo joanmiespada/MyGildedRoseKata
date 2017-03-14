@@ -11,7 +11,7 @@ public class GildedRoseTest {
     public static final int Days2 = 2;
 
     @Test
-    public void NormalWay_DecreaseQuality_1day() {
+    public void NormalWay_DecreaseQuality_Bydays() {
         Item[] items = new Item[] { new Item("apple", 10, 8) };
         GildedRose app = new GildedRose(items);
         app.updateQuality();

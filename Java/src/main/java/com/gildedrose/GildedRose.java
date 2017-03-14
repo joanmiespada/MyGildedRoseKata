@@ -3,18 +3,40 @@ package com.gildedrose;
 class GildedRose {
     Item[] items;
 
-    private static String AgedBrie= "Aged Brie";
-    private static String Backstage= "Backstage passes to a TAFKAL80ETC concert";
-    private static String Sulfuras= "Sulfuras, Hand of Ragnaros";
+    private static final String AgedBrie= "Aged Brie";
+    private static final String Backstage= "Backstage passes to a TAFKAL80ETC concert";
+    private static final String Sulfuras= "Sulfuras, Hand of Ragnaros";
 
     public GildedRose(Item[] items) {
         this.items = items;
     }
 
-    public void updateQuality() {
-        for (int i = 0; i < items.length; i++) {
-            if (!items[i].name.equals(AgedBrie)
-                    && !items[i].name.equals(Backstage)) {
+    public void updateQuality()
+    {
+        //check all items
+        for (Item item: this.items ) {
+
+            ReduceQualityAndSellin(item);
+
+        }
+        
+    }
+
+    /*
+    *  Comment: Reduce the quality of products and SellIn by one, the normal way
+    * */
+    private void ReduceQualityAndSellin(Item item)
+    {
+        item.sellIn--;
+        item.quality--;
+    }
+    
+    
+    
+    public void updateQuality2() {
+        for (int i = 0; i < items.length; i++)
+        { 
+            if (!items[i].name.equals(AgedBrie) && !items[i].name.equals(Backstage)) {
                 if (items[i].quality > 0) {
                     if (!items[i].name.equals(Sulfuras)) {
                         items[i].quality = items[i].quality - 1;
