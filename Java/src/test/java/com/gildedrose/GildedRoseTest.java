@@ -5,6 +5,7 @@ import static org.junit.Assert.*;
 import com.gildedrose.items.AgedBrie;
 import com.gildedrose.items.Backstage;
 import com.gildedrose.items.Sulfuras;
+import com.gildedrose.items.Conjured;
 import org.junit.Test;
 
 public class GildedRoseTest {
@@ -91,6 +92,18 @@ public class GildedRoseTest {
         assertEquals(31, app.items[0].quality);
         assertEquals(3, app.items[0].sellIn);
         for (int i = 0; i < Days5 ; i++)  app.updateQuality();
+        assertEquals(0, app.items[0].quality);
+        assertEquals(-2, app.items[0].sellIn);
+    }
+
+    @Test
+    public void ConjuredItem() {
+        Item[] items = new Item[]{new Conjured("Conjured", 10, 6)};
+        GildedRose app = new GildedRose(items);
+        for (int i = 0; i < Days2; i++) app.updateQuality();
+        assertEquals(2, app.items[0].quality);
+        assertEquals(8, app.items[0].sellIn);
+        for (int i = 0; i < Days10; i++) app.updateQuality();
         assertEquals(0, app.items[0].quality);
         assertEquals(-2, app.items[0].sellIn);
     }
