@@ -8,8 +8,8 @@ public class Item {
 
     public int quality;
 
-    private static final int UNIT  = 1;
-    private static final int TWICE = 2;
+    public static final int UNIT  = 1;
+    public static final int TWICE = 2;
 
     public Item(String name, int sellIn, int quality) {
         this.name = name;

@@ -2,6 +2,7 @@ package com.gildedrose;
 
 import static org.junit.Assert.*;
 
+import com.gildedrose.items.AgedBrie;
 import org.junit.Test;
 
 public class GildedRoseTest {
@@ -51,7 +52,7 @@ public class GildedRoseTest {
 
     @Test
     public void AgedBrieQualityIncreases() {
-        Item[] items = new Item[] { new Item("Aged Brie", 10, 2) };
+        Item[] items = new Item[] { new AgedBrie("Aged Brie", 10, 2) };
         GildedRose app = new GildedRose(items);
         for (int i = 0; i < Days10 ; i++)  app.updateQuality();
         assertEquals(12, app.items[0].quality);
