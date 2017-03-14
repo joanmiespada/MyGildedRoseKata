@@ -16,20 +16,13 @@ class GildedRose {
         //check all items
         for (Item item: this.items ) {
 
-            ReduceQualityAndSellin(item);
+            item.ReduceQualityAndSellin();
 
         }
         
     }
 
-    /*
-    *  Comment: Reduce the quality of products and SellIn by one, the normal way
-    * */
-    private void ReduceQualityAndSellin(Item item)
-    {
-        item.sellIn--;
-        item.quality--;
-    }
+
     
     
     
