@@ -8,6 +8,9 @@ public class Item {
 
     public int quality;
 
+    private static final int UNIT  = 1;
+    private static final int TWICE = 2;
+
     public Item(String name, int sellIn, int quality) {
         this.name = name;
         this.sellIn = sellIn;
@@ -21,7 +24,27 @@ public class Item {
 
     public void ReduceQualityAndSellin()
     {
-        this.sellIn--;
-        this.quality--;
+        ReduceQuality( ChooseFactor() );
+        ReduceSellIn();
     }
+
+    protected void ReduceSellIn()
+    {
+        this.sellIn--;
+    }
+
+    protected void ReduceQuality(int factor)
+    {
+        if(this.quality >0)
+            this.quality+= factor;
+    }
+
+    protected int ChooseFactor()
+    {
+        if( this.sellIn>0)
+            return -UNIT;
+        else
+            return -TWICE;
+    }
+
 }
