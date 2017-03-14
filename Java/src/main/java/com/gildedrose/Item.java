@@ -23,7 +23,7 @@ public class Item {
         return this.name + ", " + this.sellIn + ", " + this.quality;
     }
 
-    public void ReduceQualityAndSellin()
+    public void ReduceQualityAndSellin() throws FactorWrongException
     {
         ChangeQuality( ChooseFactor() );
         ReduceSellIn();
@@ -34,7 +34,7 @@ public class Item {
         this.sellIn--;
     }
 
-    protected void ChangeQuality(int factor)
+    protected void ChangeQuality(int factor) throws FactorWrongException
     {
         if(factor <0) { //we must protect under zero
             ProtectBelowZero(factor);
@@ -43,8 +43,11 @@ public class Item {
         }
     }
 
-    protected void ProtectBelowZero(int factor)
+    protected void ProtectBelowZero(int factor) throws  FactorWrongException
     {
+        //here the factor should be always negative
+        if(factor>0) throw new FactorWrongException();
+
         if (this.quality > 0)
             this.quality += factor;
     }

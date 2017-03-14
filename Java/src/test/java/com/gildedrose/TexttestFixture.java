@@ -3,7 +3,7 @@ package com.gildedrose;
 import com.gildedrose.items.*;
 
 public class TexttestFixture {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws FactorWrongException {
         System.out.println("OMGHAI!");
 
         Item[] items = new Item[] {

@@ -15,7 +15,7 @@ public class GildedRoseTest {
     public static final int Days2 = 2;
 
     @Test
-    public void NormalWay_DecreaseQuality_Bydays() {
+    public void NormalWay_DecreaseQuality_Bydays() throws FactorWrongException {
         Item[] items = new Item[] { new Item("apple", 10, 8) };
         GildedRose app = new GildedRose(items);
         app.updateQuality();
@@ -30,7 +30,7 @@ public class GildedRoseTest {
     }
 
     @Test
-    public void DegradeProductsWay_twice() {
+    public void DegradeProductsWay_twice() throws FactorWrongException {
         Item[] items = new Item[] { new Item("apple", 10, 20) };
         GildedRose app = new GildedRose(items);
         for (int i = 0; i < Days10 ; i++)  app.updateQuality();
@@ -45,7 +45,7 @@ public class GildedRoseTest {
     }
 
     @Test
-    public void QualityIsNeverNegative() {
+    public void QualityIsNeverNegative() throws FactorWrongException {
         Item[] items = new Item[] { new Item("apple", 5, 2) };
         GildedRose app = new GildedRose(items);
         for (int i = 0; i < Days10 ; i++)  app.updateQuality();
@@ -54,7 +54,7 @@ public class GildedRoseTest {
     }
 
     @Test
-    public void AgedBrieQualityIncreases() {
+    public void AgedBrieQualityIncreases() throws FactorWrongException {
         Item[] items = new Item[] { new AgedBrie("Aged Brie", 10, 2) };
         GildedRose app = new GildedRose(items);
         for (int i = 0; i < Days10 ; i++)  app.updateQuality();
@@ -63,7 +63,7 @@ public class GildedRoseTest {
     }
 
     @Test
-    public void AgedBrieQualityIncreasesTOP50() {
+    public void AgedBrieQualityIncreasesTOP50() throws FactorWrongException {
         Item[] items = new Item[] { new AgedBrie("Aged Brie", 10, 46) };
         GildedRose app = new GildedRose(items);
         for (int i = 0; i < Days10 ; i++)  app.updateQuality();
@@ -71,7 +71,7 @@ public class GildedRoseTest {
     }
 
     @Test
-    public void SulfurasNoDecrease() {
+    public void SulfurasNoDecrease() throws FactorWrongException {
         Item[] items = new Item[] { new Sulfuras("Sulfuras, Hand of Ragnaros", 1000, 500) };
         GildedRose app = new GildedRose(items);
         for (int i = 0; i < Days10 ; i++)  app.updateQuality();
@@ -79,7 +79,7 @@ public class GildedRoseTest {
     }
 
     @Test
-    public void BackstagePasses() {
+    public void BackstagePasses() throws FactorWrongException {
         Item[] items = new Item[] { new Backstage("Backstage passes to a TAFKAL80ETC concert", 20, 5) };
         GildedRose app = new GildedRose(items);
         for (int i = 0; i < Days2 ; i++)  app.updateQuality();
@@ -97,7 +97,7 @@ public class GildedRoseTest {
     }
 
     @Test
-    public void ConjuredItem() {
+    public void ConjuredItem() throws FactorWrongException {
         Item[] items = new Item[]{new Conjured("Conjured", 10, 6)};
         GildedRose app = new GildedRose(items);
         for (int i = 0; i < Days2; i++) app.updateQuality();

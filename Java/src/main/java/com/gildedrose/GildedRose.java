@@ -11,7 +11,7 @@ class GildedRose {
         this.items = items;
     }
 
-    public void updateQuality()
+    public void updateQuality() throws FactorWrongException
     {
         //check all items
         for (Item item: this.items ) {
