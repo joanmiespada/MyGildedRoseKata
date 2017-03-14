@@ -3,9 +3,9 @@ package com.gildedrose;
 class GildedRose {
     Item[] items;
 
-    private static final String AgedBrie= "Aged Brie";
-    private static final String Backstage= "Backstage passes to a TAFKAL80ETC concert";
-    private static final String Sulfuras= "Sulfuras, Hand of Ragnaros";
+    //private static final String AgedBrie= "Aged Brie";
+    //private static final String Backstage= "Backstage passes to a TAFKAL80ETC concert";
+    //private static final String Sulfuras= "Sulfuras, Hand of Ragnaros";
 
     public GildedRose(Item[] items) {
         this.items = items;
@@ -22,11 +22,8 @@ class GildedRose {
         
     }
 
-
     
-    
-    
-    public void updateQuality2() {
+   /* public void updateQuality2() {
         for (int i = 0; i < items.length; i++)
         { 
             if (!items[i].name.equals(AgedBrie) && !items[i].name.equals(Backstage)) {
@@ -77,5 +74,5 @@ class GildedRose {
                 }
             }
         }
-    }
+    }*/
 }

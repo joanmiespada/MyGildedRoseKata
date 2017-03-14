@@ -25,7 +25,7 @@ public class Backstage extends Item {
             return THIRD;
     }
 
-    protected void ReduceQuality(int factor)
+    protected void ChangeQuality(int factor)
     {
         if(this.sellIn > 0)
             ProtectOverFifty(factor);

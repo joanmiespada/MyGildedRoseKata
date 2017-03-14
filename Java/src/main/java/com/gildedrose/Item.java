@@ -25,7 +25,7 @@ public class Item {
 
     public void ReduceQualityAndSellin()
     {
-        ReduceQuality( ChooseFactor() );
+        ChangeQuality( ChooseFactor() );
         ReduceSellIn();
     }
 
@@ -34,7 +34,7 @@ public class Item {
         this.sellIn--;
     }
 
-    protected void ReduceQuality(int factor)
+    protected void ChangeQuality(int factor)
     {
         if(factor <0) { //we must protect under zero
             ProtectBelowZero(factor);
