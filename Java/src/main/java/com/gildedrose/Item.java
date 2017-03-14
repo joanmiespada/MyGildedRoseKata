@@ -10,6 +10,7 @@ public class Item {
 
     public static final int UNIT  = 1;
     public static final int TWICE = 2;
+    public static final int TOPQUALITY = 50;
 
     public Item(String name, int sellIn, int quality) {
         this.name = name;
@@ -35,8 +36,26 @@ public class Item {
 
     protected void ReduceQuality(int factor)
     {
-        if(this.quality >0)
-            this.quality+= factor;
+        if(factor <0) { //we must protect under zero
+            ProtectBelowZero(factor);
+        }else { //we must protect over 50
+            ProtectOverFifty(factor);
+        }
+    }
+
+    protected void ProtectBelowZero(int factor)
+    {
+        if (this.quality > 0)
+            this.quality += factor;
+    }
+
+    protected void ProtectOverFifty(int factor)
+    {
+
+        if (this.quality < TOPQUALITY )
+            this.quality += factor ;
+        else
+            this.quality = TOPQUALITY ;
     }
 
     protected int ChooseFactor()

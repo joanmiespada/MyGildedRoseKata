@@ -61,7 +61,7 @@ public class GildedRoseTest {
 
     @Test
     public void AgedBrieQualityIncreasesTOP50() {
-        Item[] items = new Item[] { new Item("Aged Brie", 10, 46) };
+        Item[] items = new Item[] { new AgedBrie("Aged Brie", 10, 46) };
         GildedRose app = new GildedRose(items);
         for (int i = 0; i < Days10 ; i++)  app.updateQuality();
         assertEquals(50, app.items[0].quality);
