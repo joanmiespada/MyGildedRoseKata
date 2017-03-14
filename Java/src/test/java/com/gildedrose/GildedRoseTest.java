@@ -3,6 +3,7 @@ package com.gildedrose;
 import static org.junit.Assert.*;
 
 import com.gildedrose.items.AgedBrie;
+import com.gildedrose.items.Backstage;
 import com.gildedrose.items.Sulfuras;
 import org.junit.Test;
 
@@ -78,7 +79,7 @@ public class GildedRoseTest {
 
     @Test
     public void BackstagePasses() {
-        Item[] items = new Item[] { new Item("Backstage passes to a TAFKAL80ETC concert", 20, 5) };
+        Item[] items = new Item[] { new Backstage("Backstage passes to a TAFKAL80ETC concert", 20, 5) };
         GildedRose app = new GildedRose(items);
         for (int i = 0; i < Days2 ; i++)  app.updateQuality();
         assertEquals(7, app.items[0].quality);
