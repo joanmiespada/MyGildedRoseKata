@@ -3,6 +3,7 @@ package com.gildedrose;
 import static org.junit.Assert.*;
 
 import com.gildedrose.items.AgedBrie;
+import com.gildedrose.items.Sulfuras;
 import org.junit.Test;
 
 public class GildedRoseTest {
@@ -69,7 +70,7 @@ public class GildedRoseTest {
 
     @Test
     public void SulfurasNoDecrease() {
-        Item[] items = new Item[] { new Item("Sulfuras, Hand of Ragnaros", 1000, 500) };
+        Item[] items = new Item[] { new Sulfuras("Sulfuras, Hand of Ragnaros", 1000, 500) };
         GildedRose app = new GildedRose(items);
         for (int i = 0; i < Days10 ; i++)  app.updateQuality();
         assertEquals(500, app.items[0].quality);
